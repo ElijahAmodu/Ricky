@@ -1,21 +1,31 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { PayloadAction, createSlice, } from "@reduxjs/toolkit";
+// import type { RootState } from '../../app/store'
 
-const initialState = {
-  value: 0
+interface VisibilityState {
+  isDivVisible: boolean;
+  divHeight: number;
+}
+
+const initialState: VisibilityState = {
+  isDivVisible: true,
+  divHeight: 52
 }
 
 export const navSlice = createSlice({
-  name: "navSlice",
+  name: "visibility",
   initialState,
   reducers: {
-    INCREMENT: state => {
-      state.value +1
+    toggleDivVisibility: state => {
+      state.isDivVisible = !state.isDivVisible;
     },
-    DECREMENT: state => {
-      state.value -=1
+    reduceNavWidth: (state, action: PayloadAction<number>) => {
+      state.divHeight = action.payload;
     }
   }
-})
+});
+
+// export const selector = (state: RootState) => state.visibility.isDivVisible
 
 export default navSlice.reducer;
-export const { INCREMENT, DECREMENT } = navSlice.actions;
+export const { toggleDivVisibility, reduceNavWidth } = navSlice.actions;
+

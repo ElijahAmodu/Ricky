@@ -1,11 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit"
-import navSlice  from "../features/Slice-implementation/navSlice";
+import visibilityReducer  from "../features/Slice-implementation/navSlice";
 
 const store = configureStore({
   reducer: {
-    nav: navSlice
+    visibility: visibilityReducer,
   }
-})
+});
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export default store;
+
+
 
