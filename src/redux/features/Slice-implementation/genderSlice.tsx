@@ -1,3 +1,4 @@
+// implement the state created here  
 import { PayloadAction, createSlice, } from "@reduxjs/toolkit";
 
 interface VisibilityState {
@@ -7,22 +8,23 @@ interface VisibilityState {
 
 const initialState: VisibilityState = {
   isDivVisible: false,
-  divHeight: 16
+  divHeight: 5
 }
 
-export const navSlice = createSlice({
-  name: "visibility",
+export const filterSlice = createSlice({
+  name: "speciesFilter",
   initialState,
   reducers: {
-    toggleDivVisibility: state => {
+    genderVisibility: state => {
       state.isDivVisible = !state.isDivVisible;
     },
-    reduceNavWidth: (state, action: PayloadAction<number>) => {
+    genderNavWidth: (state, action: PayloadAction<number>) => {
       state.divHeight = action.payload;
     }
   }
 });
 
-export default navSlice.reducer;
-export const { toggleDivVisibility, reduceNavWidth } = navSlice.actions;
+export default filterSlice.reducer;
+export const { genderVisibility, genderNavWidth } = filterSlice.actions;
+
 

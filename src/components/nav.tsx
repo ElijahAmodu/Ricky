@@ -21,12 +21,12 @@ export function Navbar() {
                 <div className="justify-center ">
                     <div className="flex justify-around">
                         <h2 className="text-xl pr-20 font-semibold text-black mt-6">Ricky & Morty <span className="text-blue-600">WiKi</span></h2>
-                        <img src={isDivVisible ? cancel : burger} alt="close-icon" className="h-7 mt-6"  onClick={handleClick}/>
+                        <img src={isDivVisible ? cancel : burger} alt="close-icon " className="h-7 mt-6 hover: cursor-pointer"  onClick={handleClick}/>
                     </div>
                      {isDivVisible && <div className="pl-20 ml-8 mt-7 text-lg">
-                        <a ><h3 className="m-2 ">Characters</h3></a>
-                        <a><h3 className="m-2">Episode</h3></a>
-                        <a><h3 className="m-2">Location</h3></a>
+                        <h3 className="m-2 ">Characters</h3>
+                        <h3 className="m-2">Episode</h3>
+                        <h3 className="m-2">Location</h3>
                     </div>}
                 </div>
             </div>
